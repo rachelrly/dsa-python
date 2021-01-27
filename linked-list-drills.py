@@ -2,8 +2,9 @@ from ll import LinkedList
 
 test = LinkedList()
 
-test.__insert_first__(test)
+test.__insert_first__('testing')
 
-test.__insert_first__(test)
+test.__insert_first__('testing22')
 
-print(test)
+d = test.__show_ll__()
+print(d)

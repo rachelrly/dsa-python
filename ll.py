@@ -1,5 +1,5 @@
 class _Node:
-    def __init__(self, value, next):
+    def __init__(self, value, next=None):
         self.value = value
         self.next = next
 
@@ -8,7 +8,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def __insert_first__(item, self):
+    def __insert_first__(self, item):
         if self.head == None:
             self.head = _Node(item, None)
         else:
@@ -42,3 +42,10 @@ class LinkedList:
             new_node = _Node(item, hold)
             node.next = new_node
             new_node.next = hold
+
+    def __show_ll__(self):
+        node = self.head
+        while node.next != None:
+            print(f'Value: {node.value} node.next: {node.next.value}')
+            node = node.next
+        print(f'Value: {node.value}')
