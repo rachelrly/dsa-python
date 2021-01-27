@@ -98,30 +98,34 @@ def solve_maze(maze, row=0, col=0, res=''):
     row_len = len(maze)
     col_len = len(maze[row])
 
-    #is a space
-    if maze[row][col] == ' ':
-        if col >= col_len - 1:
-            res += 'D'
-            solve_maze(maze, row + 1, col, res)
-        else:
-            res += 'R'
-            solve_maze(maze, row, col + 1, res)
-
-    elif maze[row][col] == 'e':
+    # base case: end of maze
+    if maze[row][col] == 'e':
         print('End of game', res)
         return res
-
+    # end of line, go down
+    elif col + 1 >= col_len:
+        res += 'D'
+        solve_maze(maze, row + 1, col, res)
+    # can't go down, go left
+    elif row >= row_len - 1:
+        res += 'L'
+        solve_maze(maze, row, col - 1, res)
+    # next is empty, go right
+    elif maze[row][col + 1] == ' ':
+        res += 'R'
+        solve_maze(maze, row, col + 1, res)
+    # otherwise, go down
     else:
         res += 'D'
         solve_maze(maze, row + 1, col, res)
 
 
-small_maze = [[' ', ' ', ' '], [' ', '*', ' '], [' ', ' ', 'e']]
+# small_maze = [[' ', ' ', ' '], [' ', '*', ' '], [' ', ' ', 'e']]
 
-large_maze = [[' ', ' ', ' ', '*', ' ', ' ', ' '],
-              ['*', '*', ' ', '*', ' ', '*', ' '],
-              [' ', ' ', ' ', ' ', ' ', ' ', ' '],
-              [' ', '*', '*', '*', '*', '*', ' '],
-              [' ', ' ', ' ', ' ', ' ', ' ', 'e']]
+# large_maze = [[' ', ' ', ' ', '*', ' ', ' ', ' '],
+#               ['*', '*', ' ', '*', ' ', '*', ' '],
+#               [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+#               [' ', '*', '*', '*', '*', '*', ' '],
+#               [' ', ' ', ' ', ' ', ' ', ' ', 'e']]
 
-solve_maze(large_maze)
+# solve_maze(large_maze)
