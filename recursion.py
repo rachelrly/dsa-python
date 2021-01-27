@@ -89,3 +89,39 @@ def factorial(n, product=1):
 
 
 #factorial(8)
+
+# Find a way ouy of the maze
+
+
+def solve_maze(maze, row=0, col=0, res=''):
+
+    row_len = len(maze)
+    col_len = len(maze[row])
+
+    #is a space
+    if maze[row][col] == ' ':
+        if col >= col_len - 1:
+            res += 'D'
+            solve_maze(maze, row + 1, col, res)
+        else:
+            res += 'R'
+            solve_maze(maze, row, col + 1, res)
+
+    elif maze[row][col] == 'e':
+        print('End of game', res)
+        return res
+
+    else:
+        res += 'D'
+        solve_maze(maze, row + 1, col, res)
+
+
+small_maze = [[' ', ' ', ' '], [' ', '*', ' '], [' ', ' ', 'e']]
+
+large_maze = [[' ', ' ', ' ', '*', ' ', ' ', ' '],
+              ['*', '*', ' ', '*', ' ', '*', ' '],
+              [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+              [' ', '*', '*', '*', '*', '*', ' '],
+              [' ', ' ', ' ', ' ', ' ', ' ', 'e']]
+
+solve_maze(large_maze)
