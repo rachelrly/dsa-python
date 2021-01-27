@@ -120,12 +120,51 @@ def solve_maze(maze, row=0, col=0, res=''):
         solve_maze(maze, row + 1, col, res)
 
 
-# small_maze = [[' ', ' ', ' '], [' ', '*', ' '], [' ', ' ', 'e']]
+small_maze = [[' ', ' ', ' '], [' ', '*', ' '], [' ', ' ', 'e']]
 
-# large_maze = [[' ', ' ', ' ', '*', ' ', ' ', ' '],
-#               ['*', '*', ' ', '*', ' ', '*', ' '],
-#               [' ', ' ', ' ', ' ', ' ', ' ', ' '],
-#               [' ', '*', '*', '*', '*', '*', ' '],
-#               [' ', ' ', ' ', ' ', ' ', ' ', 'e']]
+large_maze = [[' ', ' ', ' ', '*', ' ', ' ', ' '],
+              ['*', '*', ' ', '*', ' ', '*', ' '],
+              [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+              [' ', '*', '*', '*', '*', '*', ' '],
+              [' ', ' ', ' ', ' ', ' ', ' ', 'e']]
 
 # solve_maze(large_maze)
+
+# Solve all paths to the maze
+
+
+def solve_all_maze_paths(maze):
+    paths = set()
+
+    def solve_paths(col=0, row=0, str=''):
+        row_len = len(maze)
+        col_len = len(maze[row])
+
+        # base case: end of maze
+        if maze[row][col] == 'e':
+            paths.add(res)
+            return
+        # end of line, go down
+        # LIMIT FOR ALL PATHS
+        elif col + 1 >= col_len:
+            res += 'D'
+            solve_paths(maze, row + 1, col, res)
+
+            #if col+1 good go there
+            # if row+1 good duplicate str and go there
+            # if col-1 duplicate str and go there
+        # can't go down, go left
+        elif row >= row_len - 1:
+            res += 'L'
+            solve_paths(maze, row, col - 1, res)
+        # next is empty, go right
+        elif maze[row][col + 1] == ' ':
+            res += 'R'
+            solve_paths(maze, row, col + 1, res)
+        # otherwise, go down
+        else:
+            res += 'D'
+            solve_paths(maze, row + 1, col, res)
+
+    print(paths)
+    return paths
