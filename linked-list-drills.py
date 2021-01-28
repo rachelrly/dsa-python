@@ -1,14 +1,40 @@
 from ll import LinkedList
 
-test = LinkedList()
+# def make_list():
+#     ll = LinkedList()
+#     ll.__insert_first__('one')
+#     ll.__insert_last__('two')
+#     ll.__insert_last__('three')
+#     ll.__insert_last__('four')
+#     ll.__insert_last__('five')
 
-test.__insert_first__('testing1')
+#     return ll
 
-test.__insert_last__('testing2')
-test.__insert_last__('testing3')
-test.__insert_last__('testing4')
-test.__insert_last__('testing5')
 
-test.__insert_at__('testing3NEW', 0)
+def reverse_list(ll, prev=None, node=None):
+    #ternary variable declaration in Python
+    thisNode = ll.head
+    # if node == None else node
+    print(thisNode)
+    ll.__show_ll__()
 
-test.__show_ll__()
+    if (thisNode.next == None):
+        print('exited at base')
+        thisNode.next = prev
+        return
+
+    node = thisNode.next
+    thisNode.next = prev
+    prev = thisNode
+
+    return reverse_list(ll, prev, node)
+
+
+ll = LinkedList()
+ll.__insert_first__('one')
+ll.__insert_last__('two')
+ll.__insert_last__('three')
+ll.__insert_last__('four')
+ll.__insert_last__('five')
+
+reverse_list(ll)

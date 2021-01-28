@@ -6,3 +6,5 @@ Re-doing the JavaScript Data Strucures and Algorithms module in Python.
 
 - recursion.py
 - collections.py (equiv to 'Working with Arrays' section)
+- ll.py (Linked List Class)
+- linked-list-drills.py
