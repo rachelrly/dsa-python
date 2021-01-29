@@ -20,23 +20,13 @@ def three_from_end(llist):
 
 
 def find_list_center(ll):
-    prev = None
     node = ll.head
-    i = 0
+    fast_pointer = ll.head
 
-    while (node.next != None):
-        hold = node.next
-        node.next = prev
-        prev = node
-        node = hold
-        i += 1
-
-    j = i // 2  # half way through list
-
-    for n in range(0, j):
+    while (fast_pointer.next != None):
         node = node.next
+        fast_pointer = node.next.next
 
-    print(node.value)
     return node
 
 
