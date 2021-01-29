@@ -51,3 +51,15 @@ class LinkedList:
             print(f'Value: {node.value} Next: {node.next.value}')
             node = node.next
         print(f'Value: {node.value}')
+
+    def reverse(self):
+        #ternary variable declaration in Python
+        thisNode = self.head
+
+        while (thisNode.next != None):
+            node = thisNode.next
+            prev = thisNode
+            thisNode.next = prev
+            thisNode = node
+
+        self.__show_ll__()
