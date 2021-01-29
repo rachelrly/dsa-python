@@ -54,12 +54,13 @@ class LinkedList:
 
     def reverse(self):
         #ternary variable declaration in Python
-        thisNode = self.head
+        prev = None
+        node = self.head
 
-        while (thisNode.next != None):
-            node = thisNode.next
-            prev = thisNode
-            thisNode.next = prev
-            thisNode = node
-
+        while (node != None):
+            hold = node.next
+            node.next = prev
+            prev = node
+            node = hold
+        self.head = prev
         self.__show_ll__()
