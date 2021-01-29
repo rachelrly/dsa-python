@@ -7,9 +7,14 @@ llist.__insert_last__('three')
 llist.__insert_last__('four')
 llist.__insert_last__('five')
 
+ def three_from_the_end(llist):
+        node = llist.head
+        while node.next.next.next != None:
+            node = node.next
+        return node
 
 # alternate solution
-def three_from_end(llist):
+def three_from_end_alt(llist):
     reverse_ll = llist.reverse()
     node = reverse_ll.head
 
@@ -30,4 +35,4 @@ def find_list_center(ll):
     return node
 
 
-find_list_center(llist)
+#find_list_center(llist)

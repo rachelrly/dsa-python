@@ -64,21 +64,15 @@ class LinkedList:
 
         self.head = prev
 
-    def __recurse_reverse__(self, node, prev=None):
-        hold = node.next
-        node.next = prev
-        hold.next = node
-        if node.next == None:
-            self.__show_ll__()
-            return
+    # def __recurse_reverse__(self, node, prev=None):
+    #     hold = node.next
+    #     node.next = prev
+    #     hold.next = node
+    #     if node.next == None:
+    #         self.__show_ll__()
+    #         return
 
-        self.__recurse_reverse__(hold, node)
+    #     self.__recurse_reverse__(hold, node)
 
-    def recurse_reverse(self):
-        return self.__recurse_reverse__(self.head)
-
-    def three_from_the_end(self):
-        node = self.head
-        while node.next.next.next != None:
-            node = node.next
-        return node
+    # def recurse_reverse(self):
+    #     return self.__recurse_reverse__(self.head)
