@@ -1,6 +1,6 @@
 # Data Strucutres and Algorithms in Python
 
-Re-doing the JavaScript Data Strucures and Algorithms from Thinkful's Software Engineering Immersion program in Python.
+This repository includes classes for various data structures and solutions to drills using them. The drills were adapted to Python from Thinkful's JavaScript Data Structures and Algorithms course.
 
 ## Contents
 
