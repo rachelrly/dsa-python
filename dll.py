@@ -5,14 +5,20 @@ class _Node:
         self.next = next
 
 
-class DoublyLinkedlist:
+class DoublyLinkedList:
     def __init__(self):
         self.head = None
 
     def insert_first(self, item):
         hold = self.head
-        self.head.prev = item
-        self.head = _Node(item, hold, None)
+        if hold == None:  # if no head
+            self.head = _Node(item, hold, None)
+            return
+        #make new head node
+        node = _Node(item)
+        node.next = self.head
+        self.head.prev = node
+        self.head = node
 
     def insert_last(self, item):
         if self.head == None:
@@ -23,3 +29,16 @@ class DoublyLinkedlist:
             node = node.next
 
         node.next = _Node(item, None, node)
+
+    def show(self):
+        node = self.head
+        while node.next != None:
+            print(f"Value: {node.value}")
+
+            if node.prev:
+                print(f"      Prev: {node.prev.value}")
+
+            if node.next:
+                print(f"      Next: {node.next.value}")
+            node = node.next
+        print(f'Value: {node.value}')

@@ -1,11 +1,25 @@
 # Data Strucutres and Algorithms in Python
 
-Re-doing the JavaScript Data Strucures and Algorithms module in Python.
+Re-doing the JavaScript Data Strucures and Algorithms from Thinkful's Software Engineering Immersion program in Python.
 
 ## Contents
 
-- recursion.py
-- collections.py (equiv to 'Working with Arrays' section)
-- ll.py (Linked List Class)
-- dll.py (Doubly Linked List Class)
-- linked-list-drills.py
+### ll.py
+
+Singly linked list class, including reverse method
+
+### dll.py
+
+Doubly linked list class
+
+### recursion.py
+
+Solutions to drills using recursion
+
+### collections.py
+
+Solutions to drills in 'Working with Arrays' section of curriculum, adapted for Python
+
+### linked-list-drills.py
+
+Solutions to drills using the linked list data strucutre

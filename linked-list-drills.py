@@ -1,17 +1,29 @@
 from ll import LinkedList
+from dll import DoublyLinkedList
 
-llist = LinkedList()
-llist.__insert_first__('one')
-llist.__insert_last__('two')
-llist.__insert_last__('three')
-llist.__insert_last__('four')
-llist.__insert_last__('five')
+# llist = LinkedList()
+# llist.__insert_first__('one')
+# llist.__insert_last__('two')
+# llist.__insert_last__('three')
+# llist.__insert_last__('four')
+# llist.__insert_last__('five')
 
- def three_from_the_end(llist):
-        node = llist.head
-        while node.next.next.next != None:
-            node = node.next
-        return node
+dllist = DoublyLinkedList()
+dllist.insert_first('five')
+dllist.insert_first('four')
+dllist.insert_first('three')
+dllist.insert_first('two')
+dllist.insert_first('one')
+dllist.show()
+
+
+#singly linked list
+def three_from_the_end(llist):
+    node = llist.head
+    while node.next.next.next != None:
+        node = node.next
+    return node
+
 
 # alternate solution
 def three_from_end_alt(llist):
@@ -24,6 +36,7 @@ def three_from_end_alt(llist):
     return node
 
 
+#singly linked list
 def find_list_center(ll):
     node = ll.head
     fast_pointer = ll.head
@@ -35,4 +48,8 @@ def find_list_center(ll):
     return node
 
 
-#find_list_center(llist)
+def test_dll(dll):
+    return
+
+
+test_dll(dllist)
