@@ -14,11 +14,11 @@ class DoublyLinkedList:
         if hold == None:  # if no head
             self.head = _Node(item, hold, None)
             return
-        #make new head node
-        node = _Node(item)
-        node.next = self.head
+
+        node = _Node(item)  # make new node
+        node.next = self.head  # set next as current head
         self.head.prev = node
-        self.head = node
+        self.head = node  # set current head as node
 
     def insert_last(self, item):
         if self.head == None:

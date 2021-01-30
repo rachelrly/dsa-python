@@ -12,6 +12,14 @@ Singly linked list class, including reverse method
 
 Doubly linked list class
 
+### stack.py
+
+Stack class with push and pop methods
+
+### queue.py
+
+Queue class with enqueue and dequeue methods
+
 ### recursion.py
 
 Solutions to drills using recursion
@@ -23,3 +31,7 @@ Solutions to drills in 'Working with Arrays' section of curriculum, adapted for 
 ### linked-list-drills.py
 
 Solutions to drills using the linked list data strucutre
+
+### stack-queue-drills.py
+
+Solutions to the drills using the stack and queue data structures

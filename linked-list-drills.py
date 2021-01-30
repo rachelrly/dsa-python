@@ -10,10 +10,10 @@ from dll import DoublyLinkedList
 
 dllist = DoublyLinkedList()
 dllist.insert_first('five')
-dllist.insert_first('four')
-dllist.insert_first('three')
-dllist.insert_first('two')
-dllist.insert_first('one')
+dllist.insert_last('four')
+dllist.insert_last('three')
+dllist.insert_last('two')
+dllist.insert_last('one')
 dllist.show()
 
 
@@ -48,8 +48,38 @@ def find_list_center(ll):
     return node
 
 
-def test_dll(dll):
-    return
+def reverse_dll(dll, node=None, prev=None):
+    node = dll.head if node == None else node
+
+    if next == None:
+        node.next = prev
+        prev.prev = node
+        dll.head = prev
+        return
+
+    hold = node.next
+    node.next = prev
+    node.prev = node.next
+    node = hold
+    prev = node.prev
+
+    dll.show()
+
+    reverse_dll(dll, node, prev)
 
 
-test_dll(dllist)
+reverse_dll(dllist)
+
+#hold the previous node and
+# def __recurse_reverse__(self, node, prev=None):
+#     hold = node.next
+#     node.next = prev
+#     hold.next = node
+#     if node.next == None:
+#         self.__show_ll__()
+#         return
+
+#     self.__recurse_reverse__(hold, node)
+
+# def recurse_reverse(self):
+#     return self.__recurse_reverse__(self.head)
