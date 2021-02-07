@@ -5,12 +5,12 @@ class _Node:
 
 
 class Stack:
-    def __init__(self, top):
-        self.top = null
+    def __init__(self, top=None):
+        self.top = top
 
     def push(self, item):
         if self.top == None:
-            self.top = _Node(item, null)
+            self.top = _Node(item, None)
             return
 
         node = _Node(item, self.top)
