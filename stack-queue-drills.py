@@ -10,6 +10,20 @@ def display(stack):
         node = node.next
     print(node.value)
 
+
+def is_palindrome(str):
+    
+
+
+
+
+
+is_palindrome('dad')
+is_palindrome('a man a plan a canal panama')
+is_palindrome('1001')
+is_palindrome('tauhida')
+
+
 s = Stack()
 
 s.push('one')

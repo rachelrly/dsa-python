@@ -35,3 +35,8 @@ Solutions to drills using the linked list data strucutre
 ### stack-queue-drills.py
 
 Solutions to the drills using the stack and queue data structures
+
+
+### other.py
+
+Solutions to other algorithm drills in Python
